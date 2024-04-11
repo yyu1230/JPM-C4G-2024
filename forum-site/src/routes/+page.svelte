@@ -2,7 +2,7 @@ Landing page
 
 
 <script>
-    import { fetchComments, fetchPosts } from "$lib/utils";
+    import { fetchComments, fetchPosts } from "$lib/ipc";
     async function handleClick() {
         try {
             const response = await fetch("http://127.0.0.1:5000/hello", {

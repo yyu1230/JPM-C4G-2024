@@ -1,6 +1,6 @@
 <script lang='ts'>
     import type { ForumPost } from "$lib/bindings/ForumPost";
-	import { postPost } from "$lib/utils";
+	import { postPost } from "$lib/ipc";
     import { v4 as uuidv4 } from 'uuid';
 
 

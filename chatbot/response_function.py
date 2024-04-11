@@ -1,7 +1,9 @@
 from openai import OpenAI
- 
+import json
+with open("key.txt", "r") as file:
+    key = file.read()
 def chatbot(user_input):
-    client = OpenAI()
+    client = OpenAI(api_key=key)
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     response_format={ "type": "json_object" },
@@ -10,7 +12,7 @@ def chatbot(user_input):
         {"role": "user", "content": user_input}
     ]
     )
-
-    return completion.choices[0].message.content
+    print(completion.choices[0].message.content)
+    return json.loads(completion.choices[0].message.content)['message']
 
 print(chatbot("I'm feeling anxious, what should I do?"))

@@ -1,6 +1,6 @@
 import type { ForumPost } from "$lib/bindings/ForumPost";
 import { forumPosts } from '$lib/stores/store';
-import { fetchPosts, fetchComments } from "$lib/utils.js";
+import { fetchPosts, fetchComments } from "$lib/ipc.js";
 import { get } from 'svelte/store';
 export async function load({ params }) {
     const { id } = params;

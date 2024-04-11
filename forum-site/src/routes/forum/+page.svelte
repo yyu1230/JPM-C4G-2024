@@ -2,7 +2,7 @@
     import type { ForumPost } from "$lib/bindings/ForumPost";
 	import CreateForumPost from "$lib/components/CreateForumPost.svelte";
     import ForumHead  from "$lib/components/ForumHead.svelte";
-	import { fetchPosts } from "$lib/utils";
+	import { fetchPosts } from "$lib/ipc";
 	import { get } from "svelte/store";
 
     let posts = fetchPosts();

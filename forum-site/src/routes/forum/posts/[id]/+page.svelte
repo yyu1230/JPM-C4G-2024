@@ -3,7 +3,7 @@
     import type { ForumComment } from "$lib/bindings/ForumComment";
     import { onMount } from "svelte";
     import CommentDisplay from "$lib/components/CommentDisplay.svelte";
-    import { postComment } from "$lib/utils.js";
+    import { postComment } from "$lib/ipc.js";
     export let data;
     let formPost : ForumPost = data.post
     let comments : ForumComment[] = data.comments

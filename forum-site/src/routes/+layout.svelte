@@ -34,8 +34,9 @@
   <nav>
     <ul>
       <li><a href="/forum">Forum</a></li>
-      <li><a href="/videos">Videos</a></li>
-      <li><a href="/profile">Profile</a></li>
+      <li><a href="/chat">Chat</a></li>
+      <!--<li><a href="/videos">Videos</a></li>
+      <li><a href="/profile">Profile</a></li>-->
     </ul>
   </nav>
   

@@ -2,6 +2,23 @@ import json
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
+from openai import OpenAI
+ 
+with open("key.txt", "r") as file:
+    key = file.read()
+def chatbot(user_input):
+    client = OpenAI(api_key=key)
+    completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    response_format={ "type": "json_object" },
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant designed to output JSON. You should only output a 'message' key with your reply as value."},
+        {"role": "user", "content": user_input}
+    ]
+    )
+
+    return json.loads(completion.choices[0].message.content)['message']
+
 app = Flask(__name__)
 CORS(app)
 
@@ -68,7 +85,14 @@ def add_comment():
     return jsonify({"message": "Commented successfully"})
 
 
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_input = request.json.get('message')
+    if user_input is None:
+        return jsonify({"message": "Missing 'message' in request"}), 400
 
+    response = chatbot(user_input)
+    return jsonify({"message": response})
 # Route to handle requests for posts data
 @app.route('/posts')
 def get_posts():
