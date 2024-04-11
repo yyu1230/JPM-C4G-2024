@@ -2,7 +2,7 @@ Landing page
 
 
 <script>
-    import { fetchPosts } from "$lib/utils";
+    import { fetchComments, fetchPosts } from "$lib/utils";
     async function handleClick() {
         try {
             const response = await fetch("http://127.0.0.1:5000/hello", {
@@ -46,4 +46,4 @@ Landing page
     }
 </script>
 
-<button on:click={fetchPosts}>Click me</button>
+<button on:click={() => {fetchComments("792c0ca3-b488-49ef-8fcf-0d96094643ed")}}>Click me</button>

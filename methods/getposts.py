@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-with open('methods/posts.json', 'r') as file:
+with open('databases/posts.json', 'r') as file:
     posts = json.load(file)
 
 # Route to handle requests for posts data

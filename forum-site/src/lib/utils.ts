@@ -1,4 +1,5 @@
 import type { ForumPost } from "$lib/bindings/ForumPost";
+import type { ForumComment } from "$lib/bindings/ForumComment";
 export async function fetchPosts() {
     try {
         const response = await fetch("http://127.0.0.1:5000/posts", {
@@ -21,14 +22,20 @@ export async function fetchPosts() {
     }
 }
 
-export async function fetchComments() {
+export async function fetchComments(id) {
     try {
-        let postID = "ID1"
-        const response = await fetch(`http://127.0.0.1:5000/comments/${postID}`, {
+        const response = await fetch(`http://127.0.0.1:5000/comments/${id}`, {
             method : 'GET'
         });
         const data = await response.json();
-        console.log(data);
+        return data.map(item => {
+            return {
+                id: item.postID,
+                content: item.commentbody,
+                author: item.author,
+                created: new Date().toISOString(), // replace with actual creation date if available
+            } as ForumComment;
+        });
 
     }
     catch (error) {

@@ -3,6 +3,7 @@
     import { onMount } from "svelte";
     export let data;
     let formPost = data.post
+    console.log(data.comments)
 </script>
 
 <style>
