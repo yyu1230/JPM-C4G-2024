@@ -1,18 +1,21 @@
 <script lang="ts">
     import type { ForumPost } from "$lib/bindings/ForumPost";
     import { onMount } from "svelte";
-    export let post: ForumPost;
-    export let data: ForumPost;
-
-
-
-    onMount(() => {
-        console.log("data below")
-		console.log(data)
-	});
-
-    
+    export let data;
+    let formPost = data.post
 </script>
 
-<h1>{post}</h1>
-<h1>{data}</h1>
+<style>
+    .title {
+        text-align: center;
+        background-color: #f0f0f0;
+        padding-top: 10px;
+    }
+    .content {
+        background-color: #e0e0e0;
+        padding-left: 20px;
+    }
+</style>
+
+<h1 class="title">{formPost.title}</h1>
+<p class="content">{formPost.content}</p>

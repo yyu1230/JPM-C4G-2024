@@ -2,6 +2,7 @@ Landing page
 
 
 <script>
+    import { fetchPosts } from "$lib/utils";
     async function handleClick() {
         try {
             const response = await fetch("http://127.0.0.1:5000/hello", {
@@ -45,4 +46,4 @@ Landing page
     }
 </script>
 
-<button on:click={handlePosts}>Click me</button>
+<button on:click={fetchPosts}>Click me</button>
