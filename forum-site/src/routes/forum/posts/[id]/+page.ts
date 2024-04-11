@@ -1,13 +1,10 @@
 import type { ForumPost } from "$lib/bindings/ForumPost";
 import { forumPosts } from '$lib/stores/store';
+import { fetchPosts } from "$lib/utils.js";
 import { get } from 'svelte/store';
 export async function load({ params }) {
     const { id } = params;
-    const posts: ForumPost[] = get(forumPosts);
-    
-    console.log("HEYYYY")
-    console.log(posts);
-    console.log(id)
+    const posts: ForumPost[] = await fetchPosts();
     const post = posts.find(post => post.id === id);
 
     if (!post) {
