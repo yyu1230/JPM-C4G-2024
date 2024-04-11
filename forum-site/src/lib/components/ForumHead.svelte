@@ -1,6 +1,5 @@
 <script lang='ts'>
     import type { ForumPost } from "$lib/bindings/ForumPost";
-
     export let post : ForumPost;
 </script>
 
@@ -9,11 +8,12 @@
     .forum-head {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        padding: 10px;
         height: 50px;
         border: 1px solid #ccc;
-        padding: 10px;
+        background-color: grey;
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .title {
