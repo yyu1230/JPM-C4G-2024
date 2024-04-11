@@ -42,3 +42,54 @@ export async function fetchComments(id) {
         console.error(error);
     }
 }
+
+export async function postComment(id, comment) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/new_comment`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                postID: id,
+                commentBody: comment,
+                author: "You"
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function postPost(post : ForumPost) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/new_post`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: post.title,
+                body: post.content,
+                author: post.author,
+                id: post.id
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data)
+    } catch (error) {
+        console.error(error);
+    }
+}
