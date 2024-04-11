@@ -1,9 +1,11 @@
 import json
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-with open('posts.json', 'r') as file:
+with open('methods/posts.json', 'r') as file:
     posts = json.load(file)
 
 # Route to handle requests for posts data
