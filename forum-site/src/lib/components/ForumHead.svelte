@@ -1,6 +1,13 @@
 <script lang='ts'>
     import type { ForumPost } from "$lib/bindings/ForumPost";
     export let post : ForumPost;
+    import { goto } from '$app/navigation';
+
+
+
+    function navigateToPost() {
+        goto(`forum/posts/${post.id}`);
+    }
 </script>
 
 
@@ -31,7 +38,7 @@
 
 <div class="forum-head">
     <div>
-        <div class="title">{post.title}</div>
+        <div class="title" on:click={navigateToPost}>{post.title}</div>
         <div class="preview">{post.content.substring(0, 50)}...</div>
     </div>
     <div class="info">
