@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"uuid": "^9.0.1"
+		"uuid": "^9.0.1",
+		"vitest": "^1.4.0"
 	}
 }

@@ -28,7 +28,7 @@
     }
 
     .preview {
-        color: #666;
+        color: blue;
     }
 
     .info {
