@@ -8,6 +8,6 @@ This was a half-day 'Code for Good' hackathon team project that formed part of J
 Team members: Arabella Zeier, Siyi Zheng, Tom Brennan, Y. Grace Yu (by presentation order)
 
 Please see the 'guidelines' directory for the challenge statement and information about judging structure & criteria. \
-Please see the 'presentation' directory for the materials for our presentation (slides & demo video). This is probably the easiest way to get an overview of our work. It might also be worth reading the speaker notes (in the slides).
+Please see the 'presentation' directory for the materials related to our presentation (slides & demo video). This is probably the quickest way to get an overview of our work.
 
 In designing solutions for scaling up support resources for people affected by sepsis, my specific contribution includes researching the technical and safeguarding limitations of machine translation and chatbots, and the role of social media (type of platform/message/message source) in raising public health awareness and behavioural change (pages 13-28, presentation slides).
