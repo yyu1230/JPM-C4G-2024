@@ -5,7 +5,7 @@
 ## Project Description
 
 This was a half-day 'Code for Good' hackathon team project that formed part of J.P. Morgan's Spring into Tech (London, 2024). \
-Team members: Arabella Zeier, Siyi Zheng, Tom Brennan, Y. Grace Yu (by presentation order)
+Team members: Arabella Zeier, Siyi Zheng, Tom Brennan, Grace Yu (by presentation order)
 
 Please see the 'guidelines' directory for the challenge statement and information about judging structure & criteria. \
 Please see the 'presentation' directory for the materials related to our presentation (slides & demo video). This is probably the quickest way to get an overview of our work.
